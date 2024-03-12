@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import Swal from 'sweetalert2';
+import { AddCategoryComponent } from '../add-category/add-category.component';
 
 @Component({
   selector: 'app-view-categories',
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ViewCategoriesComponent implements OnInit {
   categories:any=[];
-  constructor(private category:CategoryService) { }
+  constructor(private category:CategoryService,public dialog: MatDialog ) { }
 
   ngOnInit(): void {
     this.category.categories().subscribe((data:any)=>{
@@ -20,5 +22,11 @@ export class ViewCategoriesComponent implements OnInit {
       Swal.fire("Error","Error in Loading,'error");
     });
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(AddCategoryComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
-import {
-  MatDialogRef,
-} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-add-category',
-  templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.css']
+  selector: 'app-add-rooms',
+  templateUrl: './add-rooms.component.html',
+  styleUrls: ['./add-rooms.component.css']
 })
-export class AddCategoryComponent implements OnInit {
+export class AddRoomsComponent implements OnInit {
+
   category={
     title:'',
     description:'',
   }
 
-  constructor(private _category:CategoryService, private snack:MatSnackBar, private router: Router, public dialogRef: MatDialogRef<AddCategoryComponent>) { }
+  constructor(private _category:CategoryService, private snack:MatSnackBar, private router: Router, public dialogRef: MatDialogRef<AddRoomsComponent>) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +41,5 @@ export class AddCategoryComponent implements OnInit {
         Swal.fire("Error", 'Server Error', 'error'); 
       });
   }
-
-
 
 }

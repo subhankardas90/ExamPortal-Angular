@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
-import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { AddEventComponent } from './pages/admin/add-event/add-event.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
-import { ViewQuizesComponent } from './pages/admin/view-quizes/view-quizes.component';
+import { ViewEventsComponent } from './pages/admin/view-events/view-events.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -19,6 +19,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { ViewRoomsComponent } from './pages/admin/view-rooms/view-rooms.component';
 
 const routes: Routes = [
   {
@@ -58,12 +59,16 @@ const routes: Routes = [
         component:AddCategoryComponent
       },
       {
-        path:'quizes',
-        component:ViewQuizesComponent
+        path:'events',
+        component:ViewEventsComponent
       },
       {
-        path:'add-quiz',
-        component:AddQuizComponent
+        path:'rooms',
+        component:ViewRoomsComponent
+      },
+      {
+        path:'add-event',
+        component:AddEventComponent
       },
       {
         path:'quiz/:qid',

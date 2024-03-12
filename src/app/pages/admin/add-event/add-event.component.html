@@ -1,16 +1,33 @@
 <mat-card>
-  <h1>Add New Quiz</h1>
+  <h1>Add New Event</h1>
   <mat-card-content>
     <div class="bootstrap-wrapper">
       <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <form (ngSubmit)="addQuiz()">
+        <div class="col-md-12">
+          <form (ngSubmit)="addEvent()">
             <mat-form-field class="w100" appearance="fill">
               <mat-label>
                 Title
               </mat-label>
               <input [(ngModel)]="quizData.title" required type="text" name="title" matInput placeholder="Enter Here" />
             </mat-form-field>
+            <div class="row">
+              <div class="col-md-4">
+            <mat-slide-toggle name="active" class="example-margin" [(ngModel)]="quizData.active" color="primary">
+              Publish
+            </mat-slide-toggle>
+              </div>
+              <div class="col-md-8">
+            <mat-form-field appearance="fill" class="mt20 w100">
+              <mat-label>Categories</mat-label>
+              <mat-select  name="category" [(ngModel)]="quizData.category.cid">
+                <mat-option *ngFor="let c of categories" [value]="c.cid">
+                  {{c.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            </div>
             <mat-form-field class="w100" appearance="fill">
               <mat-label>
                 Description
@@ -38,22 +55,10 @@
 
               </div>
             </div>
-            <mat-slide-toggle name="active" class="example-margin" [(ngModel)]="quizData.active" color="primary">
-                Publish Status
-              </mat-slide-toggle>
-        
-              <br />
-        
-              <mat-form-field appearance="fill" class="mt20 w100">
-                <mat-label>Categories</mat-label>
-                <mat-select  name="category" [(ngModel)]="quizData.category.cid">
-                  <mat-option *ngFor="let c of categories" [value]="c.cid">
-                    {{c.title}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+            
               <div class="container text-center">
                 <button mat-raised-button color="primary">Add</button>
+                <button mat-raised-button mat-dialog-close color="accent">Cancel</button>
               </div>
           </form>
         </div>

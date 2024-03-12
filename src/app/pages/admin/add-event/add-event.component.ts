@@ -3,13 +3,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-add-quiz',
-  templateUrl: './add-quiz.component.html',
-  styleUrls: ['./add-quiz.component.css']
+  selector: 'app-add-event',
+  templateUrl: './add-event.component.html',
+  styleUrls: ['./add-event.component.css']
 })
-export class AddQuizComponent implements OnInit {
+export class AddEventComponent implements OnInit {
   categories:any=[];
   quizData={
     title:'',
@@ -21,7 +22,7 @@ export class AddQuizComponent implements OnInit {
       cid:''
     },
   }
-  constructor(private catService:CategoryService, private snack:MatSnackBar, private quizService:QuizService) { }
+  constructor(private catService:CategoryService, private snack:MatSnackBar, private quizService:QuizService, public dialogRef: MatDialogRef<AddEventComponent>) { }
 
   ngOnInit(): void {
     this.catService.categories().subscribe(
@@ -35,7 +36,7 @@ export class AddQuizComponent implements OnInit {
 
   //Add Quiz
 
-    addQuiz(){
+  addEvent(){
       if(this.quizData.title.trim()=='' || this.quizData.title==null){
         this.snack.open("Title Required !!",'',{
           duration:3000 
@@ -58,7 +59,7 @@ export class AddQuizComponent implements OnInit {
           category:{
             cid:''
           }}
-
+        this.dialogRef.close();
         Swal.fire("Success", 'Quiz is added Successfully', 'success');
       },
       (error)=>{

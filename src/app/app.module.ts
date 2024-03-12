@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { StartComponent } from './pages/user/start/start.component';
-  
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
@@ -30,8 +30,8 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatTableModule} from '@angular/material/table';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
-import { ViewQuizesComponent } from './pages/admin/view-quizes/view-quizes.component';
-import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { ViewEventsComponent } from './pages/admin/view-events/view-events.component';
+import { AddEventComponent } from './pages/admin/add-event/add-event.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
@@ -44,6 +44,8 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ViewRoomsComponent } from './pages/admin/view-rooms/view-rooms.component';
+import { AddRoomsComponent } from './pages/admin/add-rooms/add-rooms.component';
 
 
 
@@ -63,14 +65,16 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
-    ViewQuizesComponent,
-    AddQuizComponent,
+    ViewEventsComponent,
+    AddEventComponent,
     UpdateQuizComponent,
     ViewQuestionsComponent,
     AddQuestionComponent,
     UserSidebar,
     LoadQuizComponent,
     InstructionsComponent,
+    ViewRoomsComponent,
+    AddRoomsComponent,
   
     
   ],
@@ -83,7 +87,8 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-
+    MatDialogModule, 
+    MatButtonModule,
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,

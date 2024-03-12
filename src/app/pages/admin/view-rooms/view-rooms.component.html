@@ -1,10 +1,10 @@
 <mat-card>
     <mat-list>
-        <h1>All Categories<button  class="ml20" mat-raised-button color="primary" (click)="openDialog()">Add Category</button></h1>
+        <h1>All Rooms<button  class="ml20" mat-raised-button color="primary" (click)="openDialog()">Add Room</button></h1>
         <mat-list-item *ngFor="let c of categories">
             <mat-icon mat-list-icon>category</mat-icon>
             <div mat-line>{{c.title}}</div>
-            <div mat-line>{{c.description}}</div>
+
             <mat-divider></mat-divider>
         </mat-list-item>
     </mat-list>

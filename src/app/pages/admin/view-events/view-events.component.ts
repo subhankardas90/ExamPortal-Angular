@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import Swal from 'sweetalert2';
+import { AddEventComponent } from '../add-event/add-event.component';
 
 @Component({
-  selector: 'app-view-quizes',
-  templateUrl: './view-quizes.component.html',
-  styleUrls: ['./view-quizes.component.css']
+  selector: 'app-view-events',
+  templateUrl: './view-events.component.html',
+  styleUrls: ['./view-events.component.css']
 })
-export class ViewQuizesComponent implements OnInit {
+export class ViewEventsComponent implements OnInit {
 
   quizes:any = [];
-  constructor(private quizService:QuizService) { }
+  constructor(private quizService:QuizService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.quizService.quizes().subscribe((data:any)=>{
@@ -43,5 +45,11 @@ export class ViewQuizesComponent implements OnInit {
     })
 
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(AddEventComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

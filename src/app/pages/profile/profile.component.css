@@ -8,9 +8,12 @@
     width: 100%;
     border: .5px solid red;
     border-collapse: collapse;
+    box-shadow: 5px 5px 5px lightblue;
+    margin-bottom: 5px;
 }
 
 .table tr td{
     padding: 20px 50px;
-    border: 1px solid green;
+    border: 2px solid lightblue;
+    box-shadow: 5px 5px 5px lightblue;
 }
