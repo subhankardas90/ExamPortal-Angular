@@ -20,6 +20,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { ViewRoomsComponent } from './pages/admin/view-rooms/view-rooms.component';
+import { CalenderComponent } from './pages/calender/calender.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
       {
         path:'rooms',
         component:ViewRoomsComponent
+      },
+      {
+        path:'calender',
+        component:CalenderComponent
       },
       {
         path:'add-event',

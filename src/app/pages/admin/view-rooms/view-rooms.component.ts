@@ -15,7 +15,6 @@ export class ViewRoomsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("test")
     this.category.categories().subscribe((data:any)=>{
       this.categories=data;
       // console.log(this.categories);

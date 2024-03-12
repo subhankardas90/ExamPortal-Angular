@@ -46,6 +46,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ViewRoomsComponent } from './pages/admin/view-rooms/view-rooms.component';
 import { AddRoomsComponent } from './pages/admin/add-rooms/add-rooms.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalenderComponent } from './pages/calender/calender.component';
 
 
 
@@ -75,6 +77,7 @@ import { AddRoomsComponent } from './pages/admin/add-rooms/add-rooms.component';
     InstructionsComponent,
     ViewRoomsComponent,
     AddRoomsComponent,
+    CalenderComponent,
   
     
   ],
@@ -102,6 +105,7 @@ import { AddRoomsComponent } from './pages/admin/add-rooms/add-rooms.component';
     MatRadioModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule,
+    FullCalendarModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
     })
